@@ -7,5 +7,20 @@
     {
         echo "$num ";
     }
+    
+    $menor=$array[0];
+    $maior=$array[0];
 
+    foreach($array as $n){
+        if($menor>$n){
+            $menor = $n;
+        }
+
+        if($maior<$n){
+            $maior =$n;
+        }
+    }
+    
+
+    echo "o menor numero do array é $menor e o maior numero do array é $maior";
 ?>
