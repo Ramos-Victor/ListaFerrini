@@ -1,28 +1,50 @@
-<legend>Ordenando um Array(bubble Sort)</legend>
+<legend>Busca Binária</legend>
 <?php
-     $array = [10,5,55,52,34,58,24,25,54,4];
-    
+     $array = [5,10,15,20,25,30,35,40,45,50];
      echo "Array: ";
      foreach($array as $number =>$num)
      {
          echo "$num ";
      }
 
-     $aux = 0;
+?>
 
-     for($i = sizeof($array) - 1 ;$i > 0; $i--){
-        for($j=0;$j<$i;$j++){
-           if($array[$j]>$array[$j+1]){
-            $aux=$array[$j];
-            $array[$j]=$array[$j+1];
-            $array[$j+1]=$aux;
-           }
+<form method="post">
+    <input type="number" name="numero" placeholder="Digite um numero" value="0">
+    <br>
+    <input type="submit" value="Buscar" name="action">
+</form>
+
+<?php
+    if(!empty($_POST)){
+        $n = intval($_POST['numero']);
+        $resultado = buscaBinaria($n);
+        if($resultado !==false){
+            echo "Item encontrado no indice $resultado";
+        }else{
+            echo "Valor não encontrado";
         }
-     }
-     
-     echo "<br>Array organizado : ";
-     foreach($array as $number =>$num)
-     {
-         echo "$num ";
-     }
+    }
+
+    function buscaBinaria($item) {
+        $array = [5,10,15,20,25,30,35,40,45,50];
+        $inicio = 0;
+        $fim = count($array) - 1;
+    
+        while ($inicio <= $fim) {
+            $meio = intdiv($inicio + $fim, 2);
+    
+            if ($array[$meio] === $item) {
+                return $meio;
+            }
+    
+            if ($array[$meio] < $item) {
+                $inicio = $meio + 1; 
+            } else {
+                $fim = $meio - 1; 
+            }
+        }
+    
+        return false; 
+    }
 ?>
