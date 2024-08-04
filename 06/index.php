@@ -2,7 +2,7 @@
 <form method="post">
     <input type="number" name="numero" placeholder="Digite um numero" value="0">
     <br>
-    <input type="submit" value="Fatorar" name="action">
+    <input type="submit" value="Ver tabuada" name="action">
 </form>
 
 <?php

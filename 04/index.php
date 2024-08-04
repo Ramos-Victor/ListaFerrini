@@ -2,7 +2,7 @@
 <form method="post">
     <input type="number" name="numero" placeholder="Digite um numero" value="0">
     <br>
-    <input type="submit" value="Fatorar" name="action">
+    <input type="submit" value="Ver sequencia de fibonacci" name="action">
 </form>
 
 <?php
